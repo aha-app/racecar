@@ -198,7 +198,7 @@ class FakeDeliveryHandle
   end
 
   def create_result
-    Rdkafka::Producer::DeliveryReport.new(partition, offset)
+    Rdkafka::Producer::DeliveryReport.new(partition, offset, topic_name)
   end
 
   def offset
@@ -207,6 +207,10 @@ class FakeDeliveryHandle
 
   def partition
     0
+  end
+
+  def topic_name
+    @msg.topic
   end
 end
 
@@ -688,7 +692,7 @@ RSpec.describe Racecar::Runner do
       runner.run
 
       expect(instrumenter).to have_received(:instrument)
-        .with("acknowledged_message", {partition: 0, offset: 0})
+        .with("acknowledged_message", {partition: 0, offset: 0, topic: "doubled"})
     end
   end
 

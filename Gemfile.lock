@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/aha-app/rdkafka-ruby.git
+  revision: 926b26d0a02e63f7e611b17b2182fc5a11d7048e
+  branch: include-topic-on-delivery-report
+  specs:
+    rdkafka (0.12.0)
+      ffi (~> 1.15)
+      mini_portile2 (~> 2.6)
+      rake (> 12)
+
 PATH
   remote: .
   specs:
@@ -27,11 +37,7 @@ GEM
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    rake (13.0.1)
-    rdkafka (0.12.0)
-      ffi (~> 1.15)
-      mini_portile2 (~> 2.6)
-      rake (> 12)
+    rake (13.0.6)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
       rspec-expectations (~> 3.10.0)
@@ -60,8 +66,9 @@ DEPENDENCIES
   pry
   racecar!
   rake (> 10.0)
+  rdkafka!
   rspec (~> 3.0)
   timecop
 
 BUNDLED WITH
-   2.3.7
+   2.3.21
